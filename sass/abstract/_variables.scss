@@ -1,0 +1,40 @@
+@use "../abstract/breakpoints" as *;
+
+// COLOR
+$clr-neutral-100: rgb(255, 255, 255);
+$clr-neutral-500: rgb(31, 31, 31);
+$clr-neutral-900: rgb(0, 0, 0);
+
+$clr-primary: rgb(181, 0, 245);
+
+// SIZES
+$size-1: 1.25rem;
+$size-2: 1.375rem;
+$size-3: 1.5rem;
+$size-4: 2rem;
+$size-5: 3rem;
+$size-6: 4rem;
+$size-7: 5rem;
+$size-8: 5.325rem;
+$size-9: 7.5rem;
+$size-10: 10rem;
+
+.container {
+  width: min(1500px, 100% - 6rem);
+  margin-inline: auto;
+  // outline: 2px solid white;
+}
+
+.pd-x {
+  padding-inline: $size-3;
+}
+
+body {
+  background-color: $clr-neutral-500;
+}
+
+@include mq(xl) {
+  .pd-x {
+    padding-inline: 0;
+  }
+}

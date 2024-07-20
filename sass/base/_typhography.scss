@@ -1,0 +1,556 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+$ff-monts: "Montserrat";
+$ff-popp: "Poppins";
+
+// HEADER
+header {
+  font-family: $ff-monts;
+  font-size: 1.3rem;
+
+  nav {
+    font-weight: 300;
+
+    .mobile-nav {
+      .mobile__content {
+        .bg-blur {
+          li > a {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .modal {
+      > * {
+        font-family: $ff-popp;
+      }
+
+      form {
+        .close-button {
+          font-size: 2rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        label {
+          font-size: 1rem;
+          font-weight: 500;
+        }
+
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .hero {
+    .hero__text {
+      font-weight: 600;
+      line-height: 1.4;
+
+      h4 {
+        font-size: 1rem;
+      }
+    }
+
+    .hero__text-mobile {
+      h1 {
+        line-height: 1.2;
+        width: min(10ch, 100%);
+      }
+
+      h4 {
+        font-size: 0.8rem;
+        width: min(25ch, 100%);
+        opacity: 0.7;
+      }
+    }
+
+    .emoji {
+      font-size: 3rem;
+    }
+  }
+}
+
+@include mq(sm) {
+  header {
+    .hero {
+      .hero__text-mobile {
+        h1 {
+          font-size: 2.2rem;
+        }
+
+        h4 {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+@include mq(xs) {
+  header {
+    .hero {
+      .hero__text-mobile {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        h4 {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+// MAIN
+main {
+  // SECTION SLIDERRR
+  .swiper-heading {
+    text-align: center;
+    font-family: $ff-monts;
+    font-weight: 600;
+  }
+
+  // BUTTON MOBILEEEE
+  .btn-mobile {
+    font-family: $ff-monts;
+    button {
+      font-weight: 700;
+    }
+    div {
+      font-size: 2rem;
+    }
+  }
+
+  // SECTION GRIDDDD
+  .about-span {
+    h1,
+    span {
+      font-family: $ff-monts;
+    }
+
+    p {
+      font-family: $ff-popp;
+      font-size: 1.55rem;
+      width: min(51.5ch, 100%);
+      font-weight: 500;
+    }
+
+    .about__head {
+      .head__h1 {
+        position: relative;
+        line-height: 1.2;
+        width: fit-content;
+
+        h1 {
+          @include card__head;
+          display: inline-block;
+          width: min(10ch, 100%);
+          width: max-content;
+          font-weight: 600;
+          font-size: 3.5rem;
+        }
+
+        h1:first-of-type {
+          border-radius: 0.8rem 0.8rem 0.8rem 0;
+        }
+        h1:last-of-type {
+          border-radius: 0 0 0.8rem 0.8rem;
+        }
+      }
+    }
+  }
+
+  .grid {
+    h1,
+    span {
+      font-family: $ff-monts;
+    }
+
+    .head__h1 {
+      position: relative;
+      line-height: 1.2;
+      width: fit-content;
+
+      h1 {
+        @include card__head;
+        display: inline-block;
+        width: min(10ch, 100%);
+        width: max-content;
+        font-weight: 600;
+      }
+    }
+
+    div:has(h1, span) {
+      h1:first-of-type {
+        border-radius: 0.8rem 0.8rem 0.8rem 0;
+      }
+      h1:last-of-type {
+        border-radius: 0 0 0.8rem 0.8rem;
+      }
+    }
+
+    .schedule {
+      .head__h1 {
+        h1 {
+          font-size: 2.7rem;
+        }
+
+        span {
+          text-align: center;
+          font-size: 1.2rem;
+          @include card__span(0.55em);
+          width: 65%;
+        }
+      }
+
+      .schedule__content {
+        font-family: $ff-popp;
+        font-size: 1.3rem;
+      }
+    }
+
+    .absen {
+      font-family: $ff-monts;
+
+      .head__h1 {
+        text-align: center;
+
+        h1 {
+          padding: 0.15em;
+          font-size: 1.75rem;
+        }
+
+        h1:first-of-type {
+          border-radius: 0.8rem;
+        }
+        h1:last-of-type {
+          padding-inline: 0.5em;
+          padding-block: 0;
+        }
+      }
+
+      form {
+        > * {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .str-span {
+      font-family: $ff-monts;
+      .head__h1 {
+        text-align: center;
+        h1 {
+          font-size: 2.75rem;
+        }
+        h1:first-of-type {
+          border-radius: 0.8rem;
+        }
+        h1:last-of-type {
+          padding-inline: 0.5em;
+          padding-block: 0;
+        }
+      }
+
+      .str__content {
+        .top {
+          h3 {
+            font-weight: 500;
+          }
+
+          h1 {
+            font-weight: 600;
+            font-size: 1.6rem;
+          }
+        }
+
+        .mid {
+          h3 {
+            font-weight: 500;
+            font-size: 1rem;
+          }
+
+          h1 {
+            font-weight: 600;
+            font-size: 1.3rem;
+          }
+        }
+
+        .bottom {
+          h3 {
+            font-weight: 500;
+            font-size: 1rem;
+          }
+
+          h1 {
+            font-weight: 600;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(xl) {
+  main {
+    .about-span {
+      p {
+        font-size: 1.2rem;
+        width: min(51.5ch, 90%);
+      }
+
+      .about__head {
+        h1 {
+          font-size: 3rem;
+        }
+
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@include mq(lg) {
+  main {
+    .about-span {
+      .about__head {
+        .head__h1 {
+          h1 {
+            font-size: 2rem;
+          }
+
+          span {
+            font-size: 0.5rem;
+          }
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        filter: drop-shadow(2px 2px 1px $clr-neutral-100);
+      }
+    }
+
+    .grid {
+      :is(.str-span, .schedule, .absen) .head__h1 {
+        h1 {
+          font-size: 2rem;
+        }
+
+        span {
+          font-size: 0.6rem;
+        }
+      }
+
+      .schedule {
+        .head__h1 {
+          span {
+            font-size: 1rem;
+
+            @include card__span(0.45em);
+          }
+        }
+
+        .schedule__content {
+          font-size: 1rem;
+        }
+      }
+
+      .str-span {
+        .str__content {
+          .mid {
+            h3 {
+              font-size: 0.8rem;
+            }
+
+            h1 {
+              font-size: 1.2rem;
+            }
+          }
+
+          .bottom {
+            h3 {
+              font-size: 0.8rem;
+            }
+
+            h1 {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(md) {
+  main {
+    .grid {
+      :is(.str-span, .schedule, .absen) .head__h1 {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        span {
+          font-size: 0.5rem;
+        }
+      }
+
+      // .str-span {
+      //   font-family: $ff-monts;
+      //   .head__h1 {
+      //     text-align: center;
+      //     h1 {
+      //       font-size: 2.75rem;
+      //     }
+      //     h1:first-of-type {
+      //       border-radius: 0.8rem;
+      //     }
+      //     h1:last-of-type {
+      //       padding-inline: 0.5em;
+      //       padding-block: 0;
+      //     }
+      //   }
+
+      //   .str__content {
+      //     .top {
+      //       h3 {
+      //         font-weight: 500;
+      //       }
+
+      //       h1 {
+      //         font-weight: 600;
+      //         font-size: 1.6rem;
+      //       }
+      //     }
+
+      //     .mid {
+      //       h3 {
+      //         font-weight: 500;
+      //         font-size: 1rem;
+      //       }
+
+      //       h1 {
+      //         font-weight: 600;
+      //         font-size: 1.3rem;
+      //       }
+      //     }
+
+      //     .bottom {
+      //       h3 {
+      //         font-weight: 500;
+      //         font-size: 1rem;
+      //       }
+
+      //       h1 {
+      //         font-weight: 600;
+      //         font-size: 1.3rem;
+      //       }
+      //     }
+      //   }
+      // }
+
+      .schedule {
+        .head__h1 {
+          span {
+            @include card__span(0.3em);
+          }
+          #day {
+            font-size: 1rem;
+          }
+        }
+
+        .schedule__content {
+          li {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(sm) {
+  main {
+    .about-span {
+      .about__head {
+        .head__h1 {
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+      p {
+        font-size: 0.9rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include mq(xs) {
+  main {
+    .grid {
+      .str-span {
+        .head__h1 {
+          h1 {
+            font-size: 1.5rem;
+          }
+        }
+
+        .str__content {
+          .mid {
+            h3 {
+              font-size: 0.7rem;
+            }
+
+            h1 {
+              font-size: 1rem;
+            }
+          }
+
+          .bottom {
+            h3 {
+              font-size: 0.7rem;
+            }
+
+            h1 {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  > * {
+    font-family: $ff-popp;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+
+@include mq(sm) {
+  footer {
+    .copyright {
+      font-size: 0.7rem;
+    }
+  }
+}
